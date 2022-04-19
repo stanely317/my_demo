@@ -103,6 +103,10 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         // 開始執行task
         cell.nickname.text = selectedlist[indexPath.row].nickname!
         cell.online_num.text = String( selectedlist[indexPath.row].online_num!)
+        cell.StreamTitle.text = selectedlist[indexPath.row].stream_title
+        if selectedlist[indexPath.row].tags != nil {
+            cell.tag1.text = "#" + selectedlist[indexPath.row].tags!
+        }
 
     return cell
     }

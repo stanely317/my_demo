@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import Foundation
+import Firebase
 
 class ChatroomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -18,18 +19,19 @@ class ChatroomViewController: UIViewController, UITableViewDataSource, UITableVi
     var videoPlayerLayer: AVPlayerLayer?
     var webSocketTask: URLSessionWebSocketTask?
     var chatpackage = [packages]()
+    var username:String = ""
     let fullScreenSize = UIScreen.main.bounds.size
     
     @IBOutlet weak var ButtomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         
-        
         self.ChatroomTableView.transform = CGAffineTransform(rotationAngle: .pi)
         self.connect()
         setupalert()
         let nib = UINib(nibName: "ChatTableViewCell", bundle: nil)
         self.ChatroomTableView.register(nib, forCellReuseIdentifier: "ChatTableViewCell")
+        
         super.viewDidLoad()
     }
     
@@ -90,7 +92,13 @@ class ChatroomViewController: UIViewController, UITableViewDataSource, UITableVi
     
 /*---------------------設定websocket---------------------*/
     func connect() {
-        guard let url = URL(string: "wss://client-dev.lottcube.asia/ws/chat/chat:app_test?nickname=Stanley") else {
+        if Auth.auth().currentUser != nil {
+            username = "Stanley"
+        }else{
+            let name = "訪客"
+            username = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        }
+        guard let url = URL(string: "wss://client-dev.lottcube.asia/ws/chat/chat:app_test?nickname=\(username)") else {
             print("Error: can not create URL")
             return
         }

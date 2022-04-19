@@ -33,7 +33,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let nib = UINib(nibName: "myCollectionViewCell", bundle: nil)
         self.myCollectionView.register(nib, forCellWithReuseIdentifier: "myCollectionViewCell")
         
-        
         obj = jsonfiledecode()
         
     }
@@ -56,7 +55,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     ofKind: UICollectionView.elementKindSectionHeader,
                     withReuseIdentifier: "mycellheader", for: indexPath)
         }
-        print("return header")
         return reusableView
     }
     
@@ -104,6 +102,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         cell.nickname.text = obj!.stream_list[indexPath.row].nickname!
         cell.online_num.text = String(obj!.stream_list[indexPath.row].online_num!)
+        if obj!.stream_list[indexPath.row].tags != nil {
+            cell.tag1.text = "#" + obj!.stream_list[indexPath.row].tags!
+        }
+        cell.StreamTitle.text = obj?.stream_list[indexPath.row].stream_title
     
         return cell
     }

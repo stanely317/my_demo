@@ -16,23 +16,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-EP-84a">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TX3-EP-84a">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台灣" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ura-Ri-iw8">
-                        <rect key="frame" x="110" y="124.5" width="35" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="直播間名稱" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ura-Ri-iw8">
+                        <rect key="frame" x="36.5" y="121" width="112.5" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暱稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TF-8C-AZe">
-                        <rect key="frame" x="7.5" y="124.5" width="45" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="1.5" y="125.5" width="67.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -68,23 +69,16 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxb-HW-4fe" userLabel="Tag View">
-                        <rect key="frame" x="4" y="90" width="90" height="30"/>
+                        <rect key="frame" x="4" y="94" width="90" height="22.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uO-Hu-BsZ">
-                                <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz1-ez-z3V">
-                                <rect key="frame" x="56" y="4" width="25" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="35" height="22.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3uO-Hu-BsZ" firstAttribute="leading" secondItem="vxb-HW-4fe" secondAttribute="leading" id="OSI-t6-kFF"/>
                             <constraint firstAttribute="bottom" secondItem="3uO-Hu-BsZ" secondAttribute="bottom" id="oaU-26-g4r"/>
@@ -105,27 +99,28 @@
                 <constraint firstItem="TX3-EP-84a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5fr-OT-jmg"/>
                 <constraint firstItem="ura-Ri-iw8" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="1.8" id="5yl-9F-abM"/>
                 <constraint firstItem="qBC-D1-UZO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="0.5" id="6kU-OV-8L0"/>
-                <constraint firstItem="ura-Ri-iw8" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="1.7" id="9Nb-Ao-IRU"/>
-                <constraint firstItem="ura-Ri-iw8" firstAttribute="width" secondItem="TX3-EP-84a" secondAttribute="height" multiplier="7:30" id="A7h-9N-aAj"/>
+                <constraint firstItem="ura-Ri-iw8" firstAttribute="width" secondItem="TX3-EP-84a" secondAttribute="height" multiplier="3:4" id="A7h-9N-aAj"/>
                 <constraint firstItem="qBC-D1-UZO" firstAttribute="width" secondItem="TX3-EP-84a" secondAttribute="width" multiplier="0.35" id="BDY-fJ-9SE"/>
+                <constraint firstAttribute="bottom" secondItem="ura-Ri-iw8" secondAttribute="bottom" constant="1" id="EKj-8h-eEI"/>
                 <constraint firstItem="vxb-HW-4fe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="0.65" id="Nw8-VU-GOO"/>
-                <constraint firstItem="2TF-8C-AZe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="0.4" id="Orc-ch-WKB"/>
+                <constraint firstItem="2TF-8C-AZe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" multiplier="0.47" id="Orc-ch-WKB"/>
                 <constraint firstItem="TX3-EP-84a" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="S0G-Nd-Sjo"/>
                 <constraint firstAttribute="bottom" secondItem="TX3-EP-84a" secondAttribute="bottom" id="Zy0-aQ-4kA"/>
-                <constraint firstItem="2TF-8C-AZe" firstAttribute="width" secondItem="TX3-EP-84a" secondAttribute="width" multiplier="0.3" id="a5n-uI-X8b"/>
+                <constraint firstItem="2TF-8C-AZe" firstAttribute="width" secondItem="TX3-EP-84a" secondAttribute="width" multiplier="0.45" id="a5n-uI-X8b"/>
                 <constraint firstAttribute="trailing" secondItem="TX3-EP-84a" secondAttribute="trailing" id="dxB-bP-MrO"/>
-                <constraint firstItem="vxb-HW-4fe" firstAttribute="height" secondItem="TX3-EP-84a" secondAttribute="height" multiplier="0.2" id="gL3-0n-tNa"/>
+                <constraint firstItem="vxb-HW-4fe" firstAttribute="height" secondItem="TX3-EP-84a" secondAttribute="height" multiplier="0.15" id="gL3-0n-tNa"/>
                 <constraint firstItem="vxb-HW-4fe" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="1.4" id="ill-vg-5ub"/>
                 <constraint firstItem="qBC-D1-UZO" firstAttribute="height" secondItem="TX3-EP-84a" secondAttribute="height" multiplier="0.1" id="qVV-ep-3nm"/>
                 <constraint firstItem="qBC-D1-UZO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" multiplier="0.3" id="snV-pu-L5I"/>
+                <constraint firstAttribute="trailing" secondItem="ura-Ri-iw8" secondAttribute="trailing" constant="1" id="zvb-Gq-Jx6"/>
             </constraints>
             <size key="customSize" width="150" height="150"/>
             <connections>
                 <outlet property="LiveImageView" destination="TX3-EP-84a" id="5J6-gY-N35"/>
+                <outlet property="StreamTitle" destination="ura-Ri-iw8" id="Auq-AF-DQE"/>
                 <outlet property="nickname" destination="2TF-8C-AZe" id="Qus-Pe-O3M"/>
                 <outlet property="online_num" destination="BId-vn-KRa" id="YGP-Ya-i4a"/>
                 <outlet property="tag1" destination="3uO-Hu-BsZ" id="qS8-FF-OFQ"/>
-                <outlet property="tag2" destination="Uz1-ez-z3V" id="AzR-Px-229"/>
             </connections>
             <point key="canvasLocation" x="210.1449275362319" y="147.99107142857142"/>
         </collectionViewCell>

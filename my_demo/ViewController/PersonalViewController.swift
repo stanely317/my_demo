@@ -30,7 +30,6 @@ class PersonalViewController: UIViewController {
                else {
                    self.tabBarController?.selectedIndex = 0
                    self.navigationController?.viewDidLoad()
-                   print("transform to homepage")
               }
         }
 

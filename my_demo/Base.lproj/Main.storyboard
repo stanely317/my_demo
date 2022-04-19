@@ -297,7 +297,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPv-nu-AcU">
-                                <rect key="frame" x="75" y="639.66666666666663" width="278" height="28.666666666666629"/>
+                                <rect key="frame" x="75" y="635.33333333333337" width="278" height="37.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="送出">
                                     <color key="baseBackgroundColor" systemColor="labelColor"/>
@@ -323,7 +323,7 @@
                             <constraint firstItem="DN0-Co-DdH" firstAttribute="width" secondItem="DN0-Co-DdH" secondAttribute="height" multiplier="8:1" id="Vzi-qd-pLX"/>
                             <constraint firstItem="i4g-h1-TCl" firstAttribute="centerX" secondItem="a5X-QA-4Nj" secondAttribute="centerX" multiplier="1.3" id="Wcb-Za-4F3"/>
                             <constraint firstItem="vPv-nu-AcU" firstAttribute="width" secondItem="I5x-bt-HTD" secondAttribute="width" multiplier="0.65" id="ZSH-kM-c1Q"/>
-                            <constraint firstItem="vPv-nu-AcU" firstAttribute="height" secondItem="I5x-bt-HTD" secondAttribute="height" multiplier="0.035" id="aDE-zJ-XBg"/>
+                            <constraint firstItem="vPv-nu-AcU" firstAttribute="height" secondItem="I5x-bt-HTD" secondAttribute="height" multiplier="0.045" id="aDE-zJ-XBg"/>
                             <constraint firstItem="Mga-7x-tOR" firstAttribute="centerX" secondItem="I5x-bt-HTD" secondAttribute="centerX" id="cCd-Td-Vb5"/>
                             <constraint firstItem="DN0-Co-DdH" firstAttribute="width" secondItem="I5x-bt-HTD" secondAttribute="width" multiplier="0.8" id="cPN-FT-Xxp"/>
                             <constraint firstItem="DN0-Co-DdH" firstAttribute="top" secondItem="Mga-7x-tOR" secondAttribute="bottom" constant="20" id="cxg-s5-lKh"/>
@@ -393,27 +393,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topPic" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-8Q-Q61">
-                                <rect key="frame" x="59" y="197" width="295" height="219"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topPic" translatesAutoresizingMaskIntoConstraints="NO" id="AYi-8Q-Q61">
+                                <rect key="frame" x="66.666666666666686" y="168.33333333333337" width="295" height="219"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLE-iU-K0B">
-                                <rect key="frame" x="185" y="469" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暱稱：陽光宅男" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLE-iU-K0B">
+                                <rect key="frame" x="128.33333333333331" y="441.66666666666669" width="171.33333333333331" height="42.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ht1-DL-SfR">
-                                <rect key="frame" x="185" y="547" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK7-qL-QXh">
-                                <rect key="frame" x="69" y="641" width="275" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK7-qL-QXh">
+                                <rect key="frame" x="76.666666666666686" y="540" width="275" height="31"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="登出">
@@ -426,6 +416,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xoW-3Q-4TA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bLE-iU-K0B" firstAttribute="centerY" secondItem="LIf-ei-R20" secondAttribute="centerY" id="750-B6-v2P"/>
+                            <constraint firstItem="cK7-qL-QXh" firstAttribute="centerX" secondItem="LIf-ei-R20" secondAttribute="centerX" id="7Fz-uy-wKB"/>
+                            <constraint firstItem="cK7-qL-QXh" firstAttribute="centerY" secondItem="LIf-ei-R20" secondAttribute="centerY" multiplier="1.2" id="CBQ-YS-4U5"/>
+                            <constraint firstItem="bLE-iU-K0B" firstAttribute="width" secondItem="xoW-3Q-4TA" secondAttribute="width" multiplier="0.4" id="EGf-wL-Jqi"/>
+                            <constraint firstItem="AYi-8Q-Q61" firstAttribute="centerX" secondItem="LIf-ei-R20" secondAttribute="centerX" id="Kw4-Wt-aci"/>
+                            <constraint firstItem="AYi-8Q-Q61" firstAttribute="centerY" secondItem="LIf-ei-R20" secondAttribute="centerY" multiplier="0.6" id="NAC-nb-gcT"/>
+                            <constraint firstItem="bLE-iU-K0B" firstAttribute="centerX" secondItem="LIf-ei-R20" secondAttribute="centerX" id="SkQ-qk-Eef"/>
+                            <constraint firstItem="AYi-8Q-Q61" firstAttribute="width" secondItem="xoW-3Q-4TA" secondAttribute="width" multiplier="0.689252" id="UKD-6S-Kjf"/>
+                            <constraint firstItem="bLE-iU-K0B" firstAttribute="height" secondItem="xoW-3Q-4TA" secondAttribute="height" multiplier="0.05" id="WGs-Qf-HRc"/>
+                            <constraint firstItem="cK7-qL-QXh" firstAttribute="height" secondItem="xoW-3Q-4TA" secondAttribute="height" multiplier="0.0365566" id="cJa-KF-GVY"/>
+                            <constraint firstItem="cK7-qL-QXh" firstAttribute="width" secondItem="xoW-3Q-4TA" secondAttribute="width" multiplier="0.642523" id="e0c-FO-QXo"/>
+                            <constraint firstItem="AYi-8Q-Q61" firstAttribute="height" secondItem="xoW-3Q-4TA" secondAttribute="height" multiplier="0.258255" id="hJd-zh-GBM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhG-1U-AtT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -449,6 +453,11 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" image="logout"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="ClickLeaveButton:" destination="wSK-1R-VzN" eventType="touchUpInside" id="LxO-0b-rVY"/>
                                 </connections>
@@ -465,11 +474,16 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" image="send"/>
                                         <buttonConfiguration key="configuration" style="gray" image="send" title=""/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="SendMessageButton:" destination="wSK-1R-VzN" eventType="touchUpInside" id="HX8-vj-Ggj"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="一起聊天吧" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PB3-GN-WXL">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="一起聊天吧" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PB3-GN-WXL">
                                         <rect key="frame" x="20" y="354" width="328" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -16,13 +16,13 @@ class PersonalNavigationController: UINavigationController {
             
             let PersonalVC = (self.storyboard?.instantiateViewController(withIdentifier: "PersonalinfoVC"))!
             setViewControllers([PersonalVC], animated: false)
-            print("user login!!!!!")
+//            print("user login!!!!!")
             
         }else{
             
             let LoginVC = (self.storyboard?.instantiateViewController(withIdentifier: "LoginVC"))!
             setViewControllers([LoginVC], animated: false)
-            print("No user~~~~~")
+//            print("No user~~~~~")
 
         }
         

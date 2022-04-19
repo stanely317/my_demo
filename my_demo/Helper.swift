@@ -12,7 +12,7 @@ class Utilities {
         
     func isPasswordValid(_ password : String) -> Bool {
         
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d]{6,12}")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "[\\w]{6,12}")
         return passwordTest.evaluate(with: password)
     }
     
@@ -23,9 +23,17 @@ class Utilities {
             output = "\(input.body!.nickname!):\(input.body!.text!)"
         case 0:     // 有人進出
             if input.body!.entry_notice!.action == "enter" {
-                output = "\(input.body!.entry_notice!.username!) 已進入聊天室"
+                if input.body?.entry_notice?.username == "" {
+                    output = "訪客已進入聊天室"
+                }else{
+                    output = "\(input.body!.entry_notice!.username!) 已進入聊天室"
+                }
             }else{
-                output = "\(input.body!.entry_notice!.username!)已離開聊天室"
+                if input.body?.entry_notice?.username == "" {
+                    output = "訪客已離開聊天室"
+                }else{
+                    output = "\(input.body!.entry_notice!.username!) 已離開聊天室"
+                }
             }
         case 5:     // 公告
             output = "\(input.body!.content!.cn!) \(input.body!.content!.tw!) \(input.body!.content!.en!)"

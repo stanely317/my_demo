@@ -15,8 +15,7 @@ class myCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var online_num: UILabel!
     @IBOutlet weak var nickname: UILabel!
     @IBOutlet weak var tag1: UILabel!
-    @IBOutlet weak var tag2: UILabel!
-    
+    @IBOutlet weak var StreamTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

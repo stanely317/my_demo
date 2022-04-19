@@ -32,7 +32,7 @@ class SignUpViewController: UIViewController {
         // 檢查是否有輸入錯誤
         let error = validateFields()
         if error != nil {
-            showError(error!)
+            self.showToast(message: error!, font: .systemFont(ofSize: 13.0))
         }
         else {
             let Nickname = NameTF.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: account, password: password) { (result, err) in                
                 if err != nil {
                     // There was an error creating the user
-                    self.showError("建立使用者錯誤！")
+                    self.showToast(message: "建立使用者錯誤，請檢查格式", font: .systemFont(ofSize: 13.0))
                 }
                 else {
                     //存入使用者暱稱
@@ -51,7 +51,7 @@ class SignUpViewController: UIViewController {
                     db.collection("user").addDocument(data: ["name":Nickname, "uid": result!.user.uid ]) { (error) in
                         if error != nil {
                             // Show error message
-                            self.showError("Error saving user data")
+                            self.showToast(message: "資料存取錯誤", font: .systemFont(ofSize: 13.0))
                         }
                     }
                     // 登入後轉移至主畫面
@@ -59,10 +59,6 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    func showError(_ message:String) {
-//        showToast(text: message)
     }
 
 }
