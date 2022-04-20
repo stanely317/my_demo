@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addKeyboardObserver()
     }
     
     func validateFields() -> String? {
@@ -26,6 +27,13 @@ class SignUpViewController: UIViewController {
             return "請檢查輸入是否正確。"
         }
        return nil
+    }
+        
+    @IBAction func TouchDownBackground(_ sender: Any) {
+        NameTF.resignFirstResponder()
+        AccountTF.resignFirstResponder()
+        PasswordTF.resignFirstResponder()
+    
     }
     
     @IBAction func ClickSendButton(_ sender: Any) {
@@ -63,4 +71,38 @@ class SignUpViewController: UIViewController {
 
 }
 
-
+extension SignUpViewController {
+    
+    func addKeyboardObserver() {
+        // 因為selector寫法只要指定方法名稱即可，參數則是已經定義好的NSNotification物件，所以不指定參數的寫法「#selector(keyboardWillShow)」也可以
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        // 能取得鍵盤高度就讓view上移鍵盤高度，否則上移view的1/3高度
+        // notification.userInfo is dictionary type
+        // keyboardframe 鍵盤外框尺寸
+        // cgRectValue 寬
+        // view : 擔任背景基底的view
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRect = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRect.height
+            view.frame.origin.y = -keyboardHeight
+        } else {
+            view.frame.origin.y = -view.frame.height / 3
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        // 讓view回復原位
+        view.frame.origin.y = 0
+    }
+    
+    // 當畫面消失時取消監控鍵盤開闔狀態
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+}

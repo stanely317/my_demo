@@ -15,14 +15,14 @@ class ChatroomViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var ChatInputTF: UITextField!
     @IBOutlet weak var ChatroomTableView: UITableView!
     @IBOutlet weak var LeaveChatButton: UIButton!
+    @IBOutlet weak var ButtomConstraint: NSLayoutConstraint!
+    
     var videoplayer: AVPlayer?
     var videoPlayerLayer: AVPlayerLayer?
     var webSocketTask: URLSessionWebSocketTask?
     var chatpackage = [packages]()
     var username:String = ""
     let fullScreenSize = UIScreen.main.bounds.size
-    
-    @IBOutlet weak var ButtomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         
@@ -38,7 +38,6 @@ class ChatroomViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         setupVideo()
         videoplayer?.play()
-        addKeyboardObserver()
     }
     
     func setupVideo() {
@@ -52,7 +51,6 @@ class ChatroomViewController: UIViewController, UITableViewDataSource, UITableVi
         let item = AVPlayerItem(url: url)
         videoplayer = AVPlayer(playerItem: item)
         videoPlayerLayer = AVPlayerLayer(player: videoplayer!)
-        
         // Adjust the size and frame
         videoPlayerLayer?.frame = CGRect(x: -self.view.frame.size.width*1.5, y: 0, width: self.view.frame.size.width*4, height: self.view.frame.size.height)
         view.layer.insertSublayer(videoPlayerLayer!, at: 0)
@@ -78,7 +76,7 @@ class ChatroomViewController: UIViewController, UITableViewDataSource, UITableVi
         self.send(message: msg)
         ChatInputTF.text = ""
     }
-    
+
     
     @IBAction func DidEndOnExit(_ sender: Any) {}
     /* 點擊虛擬鍵盤上return鍵會隱藏虛擬鍵盤 */

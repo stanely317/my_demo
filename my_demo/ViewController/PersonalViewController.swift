@@ -16,6 +16,11 @@ class PersonalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+        
+    @IBAction func TouchDownBackGround(_ sender: Any) {
+        AccountTF.resignFirstResponder()
+        PasswordTF.resignFirstResponder()
+    }
     
     @IBAction func LoginAction(_ sender: Any) {
            
@@ -33,7 +38,7 @@ class PersonalViewController: UIViewController {
               }
         }
 
-        
+        print(Auth.auth().currentUser?.email ?? "", Auth.auth().currentUser?.displayName ?? "")
     }
 
 }

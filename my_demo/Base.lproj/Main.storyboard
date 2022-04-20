@@ -77,7 +77,7 @@
         <scene sceneID="04s-1k-JnW">
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="ksA-ir-XMu" customClass="PersonalViewController" customModule="my_demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SCY-Au-CbS">
+                    <view key="view" contentMode="scaleToFill" id="SCY-Au-CbS" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -173,6 +173,9 @@
                             <constraint firstItem="bzx-Fa-5pS" firstAttribute="width" secondItem="Rba-jf-sDi" secondAttribute="width" multiplier="0.65" id="peS-DH-LcU"/>
                             <constraint firstItem="I9B-MW-Yjo" firstAttribute="height" secondItem="Rba-jf-sDi" secondAttribute="height" multiplier="0.0365566" id="veh-3H-Krq"/>
                         </constraints>
+                        <connections>
+                            <action selector="TouchDownBackGround:" destination="ksA-ir-XMu" eventType="touchDown" id="1MI-Bk-a5E"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="帳號登入" id="fL2-5x-rID"/>
                     <connections>
@@ -188,7 +191,7 @@
         <scene sceneID="eny-yc-tcl">
             <objects>
                 <viewController id="ZmP-1W-4FY" customClass="SignUpViewController" customModule="my_demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a5X-QA-4Nj">
+                    <view key="view" contentMode="scaleToFill" id="a5X-QA-4Nj" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -277,7 +280,7 @@
                                         <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   請輸入4-20位字母或數字" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-zR-dc7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   請輸入6-12位字母或數字" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-zR-dc7">
                                         <rect key="frame" x="35" y="0.0" width="307.66666666666669" height="42.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -334,6 +337,9 @@
                             <constraint firstItem="DDX-p5-uoH" firstAttribute="width" secondItem="a5X-QA-4Nj" secondAttribute="width" multiplier="0.8" id="tMH-Gx-0Jp"/>
                             <constraint firstItem="DN0-Co-DdH" firstAttribute="centerX" secondItem="a5X-QA-4Nj" secondAttribute="centerX" id="tuv-Jo-af1"/>
                         </constraints>
+                        <connections>
+                            <action selector="TouchDownBackground:" destination="ZmP-1W-4FY" eventType="touchDown" id="efK-Mu-7nD"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="註冊會員" largeTitleDisplayMode="never" id="x8u-Bj-EwB"/>
                     <connections>
