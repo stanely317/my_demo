@@ -12,6 +12,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var myCollectionViewFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var TopvViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var TopImageView: UIImageView!
+    @IBOutlet weak var TopNickname: UILabel!
     var obj: results?
     var fullScreenSize :CGSize!
     
@@ -43,33 +46,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             ChatroomVC.modalPresentationStyle = .fullScreen
                 present(ChatroomVC, animated: true, completion: nil)
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        var reusableView = UICollectionReusableView()
-        // 取得元件屬於header/footer，就依照當初storyboard設定的ID來取得對應物件
-        if kind == UICollectionView.elementKindSectionHeader {
-            reusableView =
-                collectionView.dequeueReusableSupplementaryView(
-                    ofKind: UICollectionView.elementKindSectionHeader,
-                    withReuseIdentifier: "mycellheader", for: indexPath)
-        }
-        return reusableView
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        print("set header size!!!")
-        var size = CGSize(width: 0, height: 0)
-        if Auth.auth().currentUser != nil{
-            size.height = 40
-            size.width = UIScreen.main.bounds.width
-            print("size of header=",size)
-        }else{
-            print("size of header=",size)
-        }
-        return size
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -112,6 +88,47 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         self.myCollectionView.reloadData()
+        setupTopView()
     }
+    
+    func setupTopView() {
+        let height = Auth.auth().currentUser == nil ? 0 : 45
+        TopvViewHeight.constant = CGFloat(height)
+        let name = Auth.auth().currentUser?.displayName
+//        print(name)
+        TopNickname.text = name
+    }
+//    username要利用封包回傳回來的方式解析(json),所以直接印不會有東西
 
 }
+
+
+
+/*設定Header Height*/
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//
+//        print("set header size!!!")
+//        var size = CGSize(width: 0, height: 0)
+//        if Auth.auth().currentUser != nil{
+//            size.height = 40
+//            size.width = UIScreen.main.bounds.width
+//            print("size of header=",size)
+//        }else{
+//            print("size of header=",size)
+//        }
+//        return size
+//    }
+
+/*設定Header content*/
+//func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//    var reusableView = UICollectionReusableView()
+//    // 取得元件屬於header/footer，就依照當初storyboard設定的ID來取得對應物件
+//    if kind == UICollectionView.elementKindSectionHeader {
+//        reusableView =
+//            collectionView.dequeueReusableSupplementaryView(
+//                ofKind: UICollectionView.elementKindSectionHeader,
+//                withReuseIdentifier: "mycellheader", for: indexPath)
+//    }
+//    return reusableView
+//}
